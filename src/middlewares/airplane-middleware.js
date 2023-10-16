@@ -1,14 +1,16 @@
-const {StatusCodes}=require('http-status-codes')
+const {StatusCodes}=require('http-status-codes');
+
+const{ErrorResponse}=require('../utils/common');
+
+
 function validateCreateRequest(req,res,next){
     if(!req.body.modelNumber){
+        ErrorResponse.message='Something went wrong while creating airplane';
+        ErrorResponse.error={explanation:'Model number not found'};
+        
         return res
         .status(StatusCodes.BAD_REQUEST)
-        .json({
-            success:false,
-            message:'Something went wrong while creating airplane',
-            data:{},
-            error:{explanation:'Model number not found'}
-        })
+        .json(ErrorResponse)
     }
     next();
 }
