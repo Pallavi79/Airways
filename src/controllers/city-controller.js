@@ -11,7 +11,7 @@ async function createCity(req, res) {
     try {
         //console.log(req.body);
         const city = await CityService.createCity({
-           name: req.body.name
+            name: req.body.name
         });
         SuccessResponse.data = city;
         return res
@@ -26,6 +26,52 @@ async function createCity(req, res) {
     }
 }
 
-module.exports={
-    createCity
+/**
+ * DELETE:/cities/:id
+ * req-body{}
+ */
+
+async function deleteCity(req, res) {
+    try {
+
+        const city = await CityService.deleteCity(req.params.id);
+        SuccessResponse.data = city;
+
+        return res.
+            status(StatusCodes.OK)
+            .json(SuccessResponse);
+
+    } catch (error) {
+        ErrorResponse.error = error
+        return res
+            .status(error.statusCode)
+            .json(ErrorResponse);
+    }
+}
+
+async function updateCity(req, res) {
+    try {
+
+        const city = await CityService.updateCity({
+            name: req.body.name
+        }, req.params.id);
+        SuccessResponse.data = city;
+
+        return res.
+            status(StatusCodes.OK)
+            .json(SuccessResponse);
+
+    } catch (error) {
+        ErrorResponse.error = error
+        return res
+            .status(error.statusCode)
+            .json(ErrorResponse);
+    }
+}
+
+
+module.exports = {
+    createCity,
+    deleteCity,
+    updateCity
 }
