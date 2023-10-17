@@ -36,6 +36,12 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    await queryInterface.bulkDelete('Airplanes',{[Op.or]:[{modelNumber:'boeing777'},{modelNumber:'airbus340'}]})
+    await queryInterface.bulkDelete(
+      'Airplanes',
+      {
+        [Op.or]:[
+          {modelNumber:'boeing777'},{modelNumber:'airbus340'}
+        ]
+      });
   }
 };

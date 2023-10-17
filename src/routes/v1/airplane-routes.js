@@ -4,9 +4,17 @@ const router = express.Router();
 const {AirplaneController}=require('../../controllers');
 const{AirplaneMiddlewares}=require('../../middlewares');
 
-//  /api/va/airplanes
+//  /api/v1/airplanes
 router.post('/',
 AirplaneMiddlewares.validateCreateRequest,
 AirplaneController.createAirplane);
+
+// /api/v1/airplanes
+router.get('/',
+AirplaneController.getAirplanes);
+
+// /api/v1/airplanes
+router.get('/:id',
+AirplaneController.getAirplane);
 
 module.exports=router;
