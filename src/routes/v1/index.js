@@ -16,4 +16,8 @@ router.use('/cities',cityRoutes);
 const airportRoutes = require('./airport-routes');
 router.use('/airports', airportRoutes);
 
+//Flights router
+const flightRoutes = require('./flight-routes');
+router.use('/flights', flightRoutes);
+
 module.exports = router;
