@@ -1,4 +1,4 @@
-This is a nodejs prohect for airline booking system.
+This is a nodejs project for flight-search-service module for airline booking system.
 
 
 ###  SETUP
@@ -53,4 +53,8 @@ it will create a config.json file in config folder, migration folder and seeder 
 -To run the server execute
 ```
 npm run dev
+```
+
+-Use the bellow command to run seeder files
+```npx sequelize db:seed --seed <filename>
 ```
