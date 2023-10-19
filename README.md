@@ -54,8 +54,3 @@ it will create a config.json file in config folder, migration folder and seeder 
 ```
 npm run dev
 ```
-
--Use the bellow command to run seeder files
-```
-npx sequelize db:seed --seed <filename>
-```
