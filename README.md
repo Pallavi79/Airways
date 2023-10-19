@@ -56,5 +56,6 @@ npm run dev
 ```
 
 -Use the bellow command to run seeder files
-```npx sequelize db:seed --seed <filename>
+```
+npx sequelize db:seed --seed <filename>
 ```
