@@ -5,7 +5,7 @@ This is a nodejs project for flight-search-service module for airline booking sy
 -Download this template from github and open it in your favourite text editor.
 -Go inside the project folder and run the following command
 ```
-npn init
+npn install
 ```
 -In the root directory create a `.env` file and add the following env:
 ```
