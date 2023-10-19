@@ -16,7 +16,7 @@ PORT=3000
 
 -Go inside src folder and execcute the following command:
 ```
-npx sequelize init
+npx sequelize install
 ```
 it will create a config.json file in config folder, migration folder and seeder folder
 
@@ -56,5 +56,6 @@ npm run dev
 ```
 
 -Use the bellow command to run seeder files
-```npx sequelize db:seed --seed <filename>
+```
+npx sequelize db:seed --seed <filename>
 ```
